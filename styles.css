@@ -1,0 +1,219 @@
+:root {
+  --ink: #07070c;
+  --ink-lift: #12121c;
+  --paper: #f4f1ea;
+  --dim: #8b8796;
+  --gold: #ffd56a;
+  --cyan: #4be4ff;
+  --max: 40rem;
+  --pad: clamp(1.25rem, 4vw, 2rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.35rem;
+  transform: translateY(-200%);
+}
+
+.skip:focus {
+  transform: none;
+  z-index: 10;
+}
+
+.wrap {
+  max-width: calc(var(--max) + var(--pad) * 2);
+  margin: 0 auto;
+  padding: var(--pad);
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 22%, transparent);
+}
+
+.mark {
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+}
+
+nav a {
+  color: var(--dim);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--gold);
+}
+
+nav a[aria-current="page"] {
+  color: var(--paper);
+}
+
+main {
+  padding: 1.75rem 0 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--paper);
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.85rem, 5vw, 2.35rem);
+  color: var(--gold);
+}
+
+h2 {
+  margin: 2rem 0 0.6rem;
+  font-size: 1.3rem;
+}
+
+h3 {
+  margin: 1.25rem 0 0.4rem;
+  font-size: 1.08rem;
+}
+
+p,
+ul {
+  margin: 0 0 1rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+.lede {
+  color: var(--dim);
+  font-size: 1.08rem;
+  margin-bottom: 1.4rem;
+}
+
+.meta {
+  color: var(--dim);
+  font-size: 0.92rem;
+}
+
+a {
+  color: var(--cyan);
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.cards {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.5rem 0 0;
+}
+
+.card {
+  display: block;
+  padding: 1.05rem 1.15rem;
+  background: var(--ink-lift);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover,
+.card:focus-visible {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent);
+}
+
+.card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  color: var(--gold);
+}
+
+.card p {
+  margin: 0;
+  color: var(--dim);
+  font-size: 0.98rem;
+}
+
+.note {
+  padding: 0.9rem 1.05rem;
+  background: var(--ink-lift);
+  border-radius: 0.85rem;
+  border-left: 3px solid var(--gold);
+}
+
+footer {
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--gold) 18%, transparent);
+  color: var(--dim);
+  font-size: 0.88rem;
+}
+
+footer p {
+  margin: 0 0 0.4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
